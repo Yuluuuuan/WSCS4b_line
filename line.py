@@ -24,7 +24,7 @@ def add_time(df, key, freq, col):
     return df_grouped
 
 def draw_line(csv_path:str,output_path:str)->str:
-    df_holidays = pd.read_csv('/data/holidays_events.csv', header=0)
+    df_holidays = pd.read_csv(f'{csv_path}/holidays_events.csv', header=0)
     df_oil = pd.read_csv(f'{csv_path}/oil.csv', header=0)
     df_stores = pd.read_csv(f'{csv_path}/stores.csv', header=0)
     df_trans = pd.read_csv(f'{csv_path}/transactions.csv', header=0)
