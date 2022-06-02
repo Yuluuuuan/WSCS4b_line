@@ -30,17 +30,28 @@ jobs:
         uses: docker/setup-qemu-action@v1
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
+        
+      - name: Install brane image
+        run : |
+          sudo apt-get update
+          sudo apt-get install ca-certificates curl gnupg lsb-release
+          sudo mkdir -p /etc/apt/keyrings
+          curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+          echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
       - name: Install brane CLI
-        uses: Wangwyxxx10/setup-brane-action@master
+        run: |
+          sudo cp ./brane /usr/local/bin/brane
+          sudo chmod +x /usr/local/bin/brane
+          brane version
       
       - name: Build brane package
         run: |
-          sudo $HOME/.local/bin/brane build container.yml
-          sudo $HOME/.local/bin/brane list
+          brane build container.yml
+          brane list
           
       - name: Import Package
-        run: (set -o pipefail && echo "import line;" | sudo $HOME/.local/bin/brane repl -c)
+        run: (set -o pipefail && echo "import line;" | brane repl -c)
         
         
         
