@@ -32,7 +32,7 @@ jobs:
         uses: docker/setup-buildx-action@v1
 
       - name: Install brane CLI
-        uses: Wangwangyxxx10/setup-brane-action@master
+        uses: Wangwyxxx10/setup-brane-action@master
       
       - name: Build brane package
         run: |
