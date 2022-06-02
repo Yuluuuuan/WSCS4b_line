@@ -58,7 +58,10 @@ jobs:
           docker buildx create --use
       - name: Install brane CLI
         run: |
-          sudo cp ./brane /usr/local/bin/brane
+          cd ~
+          git clone https://github.com/epi-project/brane.git
+          cp -iv ./brane/contrib/config/infra-local-vm.yml ./brane/infra.yml
+          sudo cp ./target/release/brane /usr/local/bin/brane
           sudo chmod +x /usr/local/bin/brane
           brane version
       - name: Build the brane package
