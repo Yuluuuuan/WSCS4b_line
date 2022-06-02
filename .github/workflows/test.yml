@@ -60,6 +60,8 @@ jobs:
         run: |
           cd ~
           git clone https://github.com/epi-project/brane.git && cd brane
+          chmod +x ./make.sh
+          ./make.sh cli
           cp -iv ./contrib/config/infra-local.yml ./infra.yml
           sudo cp ./target/release/brane /usr/local/bin/brane
           sudo chmod +x /usr/local/bin/brane
