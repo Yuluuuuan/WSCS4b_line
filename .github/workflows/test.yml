@@ -74,7 +74,7 @@ jobs:
       - name: Import predicting package
         shell: bash
         run: |
-          (set -o pipefail && echo "import line;" | sudo $HOME/.local/bin/brane repl -c)
+          (set -o pipefail && echo "import line;" | brane repl -c)
         
         
         
