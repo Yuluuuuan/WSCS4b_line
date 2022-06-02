@@ -61,7 +61,7 @@ jobs:
           cd ~
           git clone https://github.com/epi-project/brane.git
           cp -iv ./brane/contrib/config/infra-local.yml ./brane/infra.yml
-          sudo cp ./brane /usr/local/bin/brane
+          sudo cp -r ./brane /usr/local/bin/brane
           sudo chmod +x /usr/local/bin/brane
           brane version
           
