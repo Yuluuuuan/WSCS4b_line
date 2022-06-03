@@ -1,6 +1,8 @@
-from line import draw_pre
-from line import draw_line
 import unittest
+
+from line import draw_line
+from line import draw_pre
+
 
 class TestStringMethods(unittest.TestCase):
     # local testing
