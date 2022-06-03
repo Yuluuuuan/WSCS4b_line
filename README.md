@@ -23,7 +23,10 @@ There are four functions in this package:
 `add_time(df, key, freq, col)`\
 `draw_line(csv_path:str,output_path:str)` \
 `draw_pre(csv_path:str,output_path:str)`,\
-for .we can get 
+for grouped() we can get dataframe that includes the "mean" column with its frequency;
+for add_time() we can get dataframe that includes the frequency;
+for draw_time() we can get the tendency of mean sales and fitted straight lines;
+for draw_pre() we can get line chart of the forecast results.
 
 You can `test` the package to get an overview of these functions and corresponding parameters:
 ```bash
