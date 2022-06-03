@@ -94,7 +94,7 @@ jobs:
         run: |
           brane build container.yml
         
-      - name: Import predicting package
+      - name: Import line package
         shell: bash
         run: |
           (set -o pipefail && echo "import line;" | brane repl -c)
